@@ -13,4 +13,10 @@ public class Line extends Shape {
         this.width = width;
         this.height = height;
     }
+
+    @Override
+    public void draw(Graphics canvas) {
+        canvas.setColor(color);
+        canvas.drawLine(x, y, x+width-1, y+height-1); // +++++
+    }
 }
