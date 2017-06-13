@@ -13,4 +13,15 @@ public class Rectangle extends Shape {
         this.width = width;
         this.height = height;
     }
+
+    @Override
+    public void draw(Graphics canvas) {
+        canvas.setColor(color);
+
+        if (isFilled) {
+            canvas.fillRect(x, y, width, height);
+        } else {
+            canvas.drawRect(x, y, width, height);
+        }
+    }
 }
