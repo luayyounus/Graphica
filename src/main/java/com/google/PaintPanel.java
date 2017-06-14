@@ -42,4 +42,29 @@ public class PaintPanel extends JPanel {
             }
         }
     }
+    
+    private void addShape(Point initialPoint, Point finalPoint) {
+        Shape shape = null;
+
+        int dx = finalPoint.x-initialPoint.x;
+        int dy = finalPoint.y-initialPoint.y;
+
+        if (inputPanel.getShapeType() == ShapeType.CIRCLE) {
+            int radius = (int)Math.round(Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2)));
+            shape = new Circle(initialPoint.x, initialPoint.y, radius);
+        } else if (inputPanel.getShapeType() == ShapeType.RECTANGLE) {
+            int x = Math.min(initialPoint.x, finalPoint.x);
+            int y = Math.min(initialPoint.y, finalPoint.y);
+
+            shape = new Rectangle(x, y, Math.abs(dx)+1, Math.abs(dy)+1);
+        } else if (inputPanel.getShapeType() == ShapeType.LINE ||
+                inputPanel.getShapeType() == ShapeType.PEN) {
+            shape = new Line(initialPoint.x, initialPoint.y, dx+1, dy+1);
+        }
+
+        shapes.add(shape);
+
+        shape.setColor(inputPanel.getCurrentColor());
+        shape.setIsFilled(inputPanel.isFilledBoxChecked());
+    }
 }
