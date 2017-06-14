@@ -31,4 +31,52 @@ public class InputPanel extends JPanel {
 
         shapeType = ShapeType.RECTANGLE;
         currentColor = Color.BLUE;
+
+        coloredSquare = new ColoredSquare(currentColor);
+
+        rectangleButton.addActionListener(e -> {
+            shapeType = ShapeType.RECTANGLE;
+        });
+
+        circleButton.addActionListener(e -> {
+            shapeType = ShapeType.CIRCLE;
+        });
+
+        lineButton.addActionListener(e -> {
+            shapeType = ShapeType.LINE;
+        });
+
+        penButton.addActionListener(e -> {
+            shapeType = ShapeType.PEN;
+        });
+
+        colorButton.addActionListener(e -> {
+            currentColor = JColorChooser.showDialog(this, "Choose a Color", currentColor);
+            coloredSquare.updateColor(currentColor);
+        });
+
+        quitButton.addActionListener(e -> {
+            System.exit(0);
+        });
+
+        setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+        setBorder(BorderFactory.createEmptyBorder(15, 15, 250, 15));
+        
+    }
+
+    public JButton getClearButton() {
+        return clearButton;
+    }
+
+    public boolean isFilledBoxChecked() {
+        return filledBox.isSelected();
+    }
+
+    public Color getCurrentColor() {
+        return currentColor;
+    }
+
+    public ShapeType getShapeType() {
+        return shapeType;
+    }
 }
