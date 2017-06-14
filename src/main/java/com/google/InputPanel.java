@@ -75,6 +75,25 @@ public class InputPanel extends JPanel {
 
         Dimension dim = new Dimension(5,5);
 
+        add(rectangleButton);
+        add(new Box.Filler(dim, dim, dim));
+        add(circleButton);
+        add(new Box.Filler(dim, dim, dim));
+        add(lineButton);
+        add(new Box.Filler(dim, dim, dim));
+        add(penButton);
+        add(new Box.Filler(dim, dim, dim));
+        add(filledBox);
+        add(new Box.Filler(dim, dim, dim));
+        add(colorButton);
+        add(new Box.Filler(dim, dim, dim));
+        add(colorLabel);
+        add(new Box.Filler(dim, dim, dim));
+        add(coloredSquare);
+        add(new Box.Filler(dim, dim, dim));
+        add(clearButton);
+        add(new Box.Filler(dim, dim, dim));
+        add(quitButton);
     }
 
     public JButton getClearButton() {
