@@ -64,4 +64,21 @@ public class SwingDemo {
 
         mainFrame.setVisible(true);
     }
+
+    private class ButtonClickListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String command = e.getActionCommand();
+
+            if (command.equals("Ok")) {
+                statusLabel.setText("Ok button clicked. Yay!");
+            } else if (command.equals("Submit")) {
+                statusLabel.setText("Submit button clicked. Cool!");
+            } else if (command.equals("Cancel")) {
+                statusLabel.setText("Cancel button clicked. Stop clicking buttons!");
+            } else {
+                statusLabel.setText("???");
+            }
+        }
+    }
 }
