@@ -42,7 +42,7 @@ public class PaintPanel extends JPanel {
             }
         }
     }
-    
+
     private void addShape(Point initialPoint, Point finalPoint) {
         Shape shape = null;
 
@@ -66,5 +66,31 @@ public class PaintPanel extends JPanel {
 
         shape.setColor(inputPanel.getCurrentColor());
         shape.setIsFilled(inputPanel.isFilledBoxChecked());
+    }
+
+    private class MouseInput extends MouseAdapter {
+        Point initialPoint;
+
+        @Override
+        public void mousePressed(MouseEvent e) {
+            initialPoint = e.getPoint();
+            addShape(initialPoint, initialPoint); //refactor
+        }
+
+        @Override
+        public void mouseDragged(MouseEvent e) {
+            Point finalPoint = e.getPoint();
+
+            if (inputPanel.getShapeType() != ShapeType.PEN) {
+                shapes.remove(shapes.size() - 1);
+            }
+
+            addShape(initialPoint, finalPoint);
+            repaint();
+
+            if (inputPanel.getShapeType() == ShapeType.PEN) {
+                initialPoint = finalPoint;
+            }
+        }
     }
 }
