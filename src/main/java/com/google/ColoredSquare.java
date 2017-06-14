@@ -15,4 +15,9 @@ public class ColoredSquare extends JComponent {
         setPreferredSize(new Dimension(50, 50));
         setMaximumSize(new Dimension(50, 50));
     }
+
+    public void updateColor(Color color) {
+        this.color = color;
+        repaint();
+    }
 }
