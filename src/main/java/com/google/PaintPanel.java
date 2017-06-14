@@ -28,5 +28,7 @@ public class PaintPanel extends JPanel {
             shapes.clear();
             repaint();
         });
+
+        setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
     }
 }
