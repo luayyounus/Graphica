@@ -31,4 +31,15 @@ public class PaintPanel extends JPanel {
 
         setCursor(new Cursor(Cursor.CROSSHAIR_CURSOR));
     }
+
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        for (Shape s : shapes) {
+            if (s != null) {
+                s.draw(g);
+            }
+        }
+    }
 }
