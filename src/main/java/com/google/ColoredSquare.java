@@ -20,7 +20,7 @@ public class ColoredSquare extends JComponent {
         this.color = color;
         repaint();
     }
-    
+
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
