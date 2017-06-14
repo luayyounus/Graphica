@@ -61,7 +61,20 @@ public class InputPanel extends JPanel {
 
         setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
         setBorder(BorderFactory.createEmptyBorder(15, 15, 250, 15));
-        
+
+        rectangleButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        circleButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        lineButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        filledBox.setAlignmentX(Component.CENTER_ALIGNMENT);
+        penButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        colorButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        colorLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        coloredSquare.setAlignmentX(Component.CENTER_ALIGNMENT);
+        clearButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        quitButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        Dimension dim = new Dimension(5,5);
+
     }
 
     public JButton getClearButton() {
